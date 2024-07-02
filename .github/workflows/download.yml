@@ -32,11 +32,22 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          wget https://ia902209.us.archive.org/32/items/windows-mojave/7601.24214.210701-0105.mojave_client_ultimate_en-us.iso
+          wget https://www.google.com/index.html
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: artifact
-          path: 7601.24214.210701-0105.mojave_client_ultimate_en-us.iso
+          path: index.html
           if-no-files-found: error          
+
+      - name: Release
+        uses: softprops/action-gh-release@master
+        with:
+          tag_name: test
+          draft: false
+          prerelease: false
+          files: |
+            index.html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

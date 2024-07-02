@@ -32,7 +32,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          aria2c https://ia801200.us.archive.org/zip_dir.php?path=/31/items/Element-XPize-XP-2k3-Eng.zip
+          aria2c https://archive.org/compress/Element-XPize-XP-2k3-Eng
 
       - name: Upload
         run: |

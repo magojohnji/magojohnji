@@ -34,13 +34,6 @@ jobs:
         run: |
           aria2c https://ia801200.us.archive.org/zip_dir.php?path=/31/items/Element-XPize-XP-2k3-Eng.zip
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: artifact
-          path: Element-XPize-XP-2k3-Eng.zip
-          if-no-files-found: error
-
       - name: Release
         uses: softprops/action-gh-release@master
         with:

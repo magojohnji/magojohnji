@@ -1,10 +1,11 @@
-name: Ubuntu
-on:
+name: CI
+on: 
+  [push]
   workflow_dispatch:
-  
 jobs:
-  Ubuntu:
+  build:
     runs-on: ubuntu-latest
     steps:
-    - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
+    - uses: actions/checkout@v4
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3

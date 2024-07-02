@@ -34,13 +34,6 @@ jobs:
         run: |
           aria2c https://ia801200.us.archive.org/zip_dir.php?path=/31/items/Element-XPize-XP-2k3-Eng.zip
 
-      - name: Release
-        uses: softprops/action-gh-release@master
-        with:
-          tag_name: Element-XPize-XP-2k3-Eng
-          draft: false
-          prerelease: false
-          files: |
-            Element-XPize-XP-2k3-Eng.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload
+        run: |
+          curl bashupload.com -T Element-XPize-XP-2k3-Eng.zip

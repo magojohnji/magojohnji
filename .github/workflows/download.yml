@@ -32,22 +32,22 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          wget https://www.google.com/index.html
+          wget https://ia801200.us.archive.org/zip_dir.php?path=/31/items/Element-XPize-XP-2k3-Eng.zip
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           name: artifact
-          path: index.html
-          if-no-files-found: error          
+          path: Element-XPize-XP-2k3-Eng.zip
+          if-no-files-found: error
 
       - name: Release
         uses: softprops/action-gh-release@master
         with:
-          tag_name: test
+          tag_name: Element-XPize-XP-2k3-Eng
           draft: false
           prerelease: false
           files: |
-            index.html
+            Element-XPize-XP-2k3-Eng.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

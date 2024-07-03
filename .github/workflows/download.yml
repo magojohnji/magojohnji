@@ -36,4 +36,4 @@ jobs:
 
       - name: Upload
         run: |
-          curl bashupload.com -T Element-XPize-XP-2k3-Eng.zip
+          curl https://bashupload.com/Element-XPize-XP-2k3-Eng.zip --data-binary @Element-XPize-XP-2k3-Eng.zip
